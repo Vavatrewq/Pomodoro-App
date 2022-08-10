@@ -16,7 +16,7 @@
 <div align="center">
 
 <h2>Ferramentas de Criação:</h2>
-<p> React | CSS | TypeScript | EsLint | EditorConfig | Prettier</p>
+<p> React | CSS | TypeScript | EsLint | EditorConfig | Prettier | Hooks</p>
 
 <br><p>Funcionalidades:</p>
 
