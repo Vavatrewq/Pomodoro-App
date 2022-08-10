@@ -1,11 +1,13 @@
-<h1 align="center">Pomodoro-App</h1>
+<h1 align="center">Pomodoro-App :upside_down_face:</h1>
 
-<h2 align="center">Projeto Criação de Rotina / Aplicando TypeScript & React -> Objetivo de Aprendizado</h2>
+<h2 align="center">Projeto Criação de Rotina / Aplicando TypeScript & React -> Objetivo de Aprendizado :nerd_face:</h2>
 
 <h2 align="center">Projeto Desenvolvido no curso Udemy Luiz Otávio Miranda.</h2>
 
 <h2>Objetivo:</h2>
 <p>Desenvolver aplicação de rotina um Pomodoro que possa introduzir TypeScript com React, passando tempo de Trabalho, folga menor, folga maior ganho através do limite de ciclos for finalizado.</p>
+
+<p>Estou Aprendendo a trabalhar com React usando TypeScript, qualquer apoio sobre esse repositorio sou muito grato. :sweat_smile:</p>
 
 <h2>Funcionalidades:</h2>
 <ul>
