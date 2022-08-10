@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Square+Peg&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Courgette&family=Quicksand:wght@500&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
+
+* {
+  margin: 0%;
+  padding: 0%;
+  outline: none;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: sans-serif;
+  line-height: 1.5;
+  background-color: #3FA796;
+}
+
+.container {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.working {
+  background-color: #A10035;
+}
+
+.hidden {
+  display: none;
+}
+
+.pomodoro {
+  background-color: #ffff;
+  margin: 50px 20px;
+  padding: 30px;
+  border-radius: 5px;
+  box-shadow: 10px 10px 5px 1px #294c46;
+  color:#2A0944;
+}
+
+.pomodoro h2 {
+  text-align: center;
+  font-size: 35px;
+  /* font-family: 'Square Peg', cursive; */
+  font-family: 'Quicksand', sans-serif;
+}
+
+.pomodoro .timer{
+  text-align: center;
+  font-family: 'Courgette', cursive;
+  font-size: 4rem;
+}
+
+.pomodoro .controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.pomodoro button {
+  padding: 10px 20px;
+  background-color: #FEC260;
+  color:#925f0d;
+  font-size: 1.0rem;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.working .pomodoro button {
+  background-color: #A10035;
+  color:#ffff;
+}
+
+.working .timer {
+  color:#A10035;
+}
+
+.working .pomodoro {
+  color:#A10035;
+  box-shadow: none;
+}
+
+.pomodoro .details {
+  margin: 20px 0;
+  line-height: 30px;
+}
+
+.details{
+  font-size: 20px;
+  font-family: 'Quicksand', sans-serif;
+}
+
