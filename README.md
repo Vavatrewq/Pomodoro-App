@@ -2,7 +2,7 @@
 
 <h2 align="center">Projeto Criação de Rotina / Aplicando TypeScript & React -> Objetivo de Aprendizado :nerd_face:</h2>
 
-<h2 align="center">Projeto Desenvolvido no curso Udemy Luiz Otávio Miranda <a href="https://visionary-pudding-ea7c32.netlify.app" target="_black">Pomodoro-App.<a/></h2>
+<h2 align="center">Projeto Desenvolvido no curso Udemy Luiz Otávio Miranda <a href="https://pomodoroapproutine.netlify.app" target="_black">Pomodoro-App.<a/></h2>
 
 <h2>Objetivo:</h2>
 <p>Desenvolver aplicação de rotina um Pomodoro que possa introduzir TypeScript com React, passando tempo de Trabalho, folga menor, folga maior ganho através do limite de ciclos for finalizado.</p>
