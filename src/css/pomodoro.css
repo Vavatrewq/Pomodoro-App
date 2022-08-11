@@ -32,7 +32,8 @@ body{
 
 .pomodoro {
   background-color: #ffff;
-  margin: 50px 20px;
+  margin: 50px 10px 80px 10px;
+  max-width: 640px;
   padding: 30px;
   border-radius: 5px;
   box-shadow: 10px 10px 5px 1px #294c46;
@@ -92,3 +93,13 @@ body{
   font-family: 'Quicksand', sans-serif;
 }
 
+.container-closed{
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.btn-closed{
+  font-size: 70px;
+  color: #A10035;
+}

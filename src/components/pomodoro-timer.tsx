@@ -10,6 +10,7 @@ import {
 } from './button';
 import Huge from '../imgs/Huge.jpg';
 import { Timer } from './timer';
+import { Props } from '../types/interface/method-Props';
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const soundTouchStart = require('../sounds/touch-Start.mp3');
 // eslint-disable-next-line @typescript-eslint/no-var-requires
@@ -17,13 +18,6 @@ const soundTouchRest = require('../sounds/touch-Rest.mp3');
 
 const soundStart = new Audio(soundTouchStart);
 const soundRest = new Audio(soundTouchRest);
-
-interface Props {
-  pomodoroTimer: number;
-  shortRestTime: number;
-  longRestTime: number;
-  cycles: number;
-}
 
 export function PomodoroTimer(props: Props): JSX.Element {
   const [mainTimer, setMainTimer] = useState(props.pomodoroTimer);
@@ -104,36 +98,38 @@ export function PomodoroTimer(props: Props): JSX.Element {
       {showtime ? (
         <App />
       ) : (
-        <div className="pomodoro">
-          <div className="container-img">
-            <img className="img-content" src={Huge} alt="timer" />
-          </div>
+        <div className="container">
+          <div className="pomodoro">
+            <div className="container-img">
+              <img className="img-content" src={Huge} alt="timer" />
+            </div>
 
-          <h2>Você Esta: {working ? 'Trabalhando...' : 'Descansando...'}</h2>
-          <Timer mainTimer={mainTimer} />
-          <div className="controls">
-            <ButtonStart text="Iniciar" onClick={() => configureWork()} />
-            <ButtonRestart
-              text="Restaurar"
-              onClick={() => configureResting(false)}
-            />
-            <ButtonEdit
-              text="Alterar"
-              onClick={() => {
-                setShowtime(true), setTimerCounting(false);
-              }}
-            />
-            <ButtonPausarStart
-              className={!working && !resting ? 'hidden' : ''}
-              text={!timerCounting ? 'Iniciar' : 'Pausar'}
-              onClick={() => setTimerCounting(!timerCounting)}
-            />
-          </div>
+            <h2>Você Esta: {working ? 'Trabalhando...' : 'Descansando...'}</h2>
+            <Timer mainTimer={mainTimer} />
+            <div className="controls">
+              <ButtonStart text="Iniciar" onClick={() => configureWork()} />
+              <ButtonRestart
+                text="Restaurar"
+                onClick={() => configureResting(false)}
+              />
+              <ButtonEdit
+                text="Alterar"
+                onClick={() => {
+                  setShowtime(true), setTimerCounting(false);
+                }}
+              />
+              <ButtonPausarStart
+                className={!working && !resting ? 'hidden' : ''}
+                text={!timerCounting ? 'Iniciar' : 'Pausar'}
+                onClick={() => setTimerCounting(!timerCounting)}
+              />
+            </div>
 
-          <div className="details">
-            <p>Ciclos Concluidos: {completedCycles}</p>
-            <p>Horas Trabalhadas: {secondToTimer(fullWorkingTime)}</p>
-            <p>Pomodoros Concluidos: {numberOfPomodoros}</p>
+            <div className="details">
+              <p>Ciclos Concluidos: {completedCycles}</p>
+              <p>Horas Trabalhadas: {secondToTimer(fullWorkingTime)}</p>
+              <p>Pomodoros Concluidos: {numberOfPomodoros}</p>
+            </div>
           </div>
         </div>
       )}

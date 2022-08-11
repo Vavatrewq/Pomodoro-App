@@ -5,6 +5,7 @@ import {
   MdOutlineEditNotifications,
   MdCreateNewFolder,
 } from 'react-icons/md';
+import { BsQuestionSquareFill } from 'react-icons/bs';
 
 interface Props {
   text: string;
@@ -52,6 +53,14 @@ export function ButtonEdit(props: Props): JSX.Element {
   return (
     <button onClick={props.onClick} className={props.className}>
       <MdOutlineEditNotifications />
+    </button>
+  );
+}
+
+export function WhatPomodoro(props: Props): JSX.Element {
+  return (
+    <button onClick={props.onClick} className={props.className}>
+      <BsQuestionSquareFill />
     </button>
   );
 }

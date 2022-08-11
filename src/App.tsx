@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { ButtonCreate } from './components/button';
+import { ButtonCreate, WhatPomodoro } from './components/button';
 import { PomodoroTimer } from './components/pomodoro-timer';
+import { WhatIsPomodoro } from './components/whatPomodoro';
 import ContainerImg from './imgs/containerImg.jpg';
 
 const result = {
@@ -17,6 +18,7 @@ export function App(): JSX.Element {
   const [inputWorkingSmall, setInputWorkingSmall] = useState('');
   const [inputWorkingLanger, setInputWorkingLanger] = useState('');
   const [inputWorkingCycles, setInputWorkingCycles] = useState('');
+  const [whatPomodoro, setWhatPomodoro] = useState(false);
 
   useEffect(() => {
     setConfigureWorking({
@@ -34,7 +36,7 @@ export function App(): JSX.Element {
   ]);
 
   return (
-    <div className="container">
+    <>
       {showtime ? (
         <PomodoroTimer
           pomodoroTimer={
@@ -57,63 +59,82 @@ export function App(): JSX.Element {
           }
         />
       ) : (
-        <div className="container">
-          <div className="pomodoro">
-            <div className="container-img">
-              <img className="img-content" src={ContainerImg} alt="timer" />
-            </div>
+        <>
+          {whatPomodoro ? (
+            <WhatIsPomodoro />
+          ) : (
+            <div className="container">
+              <div className="pomodoro">
+                <WhatPomodoro
+                  className="btn-start"
+                  text="what-pomodoro"
+                  onClick={() => {
+                    setWhatPomodoro(true);
+                  }}
+                />
+                <div className="container-img">
+                  <img className="img-content" src={ContainerImg} alt="timer" />
+                </div>
 
-            <h2>Cria Sua Rotina...</h2>
+                <h2>Cria Sua Rotina...</h2>
 
-            <div className="container-input">
-              <input
-                className="config-input"
-                min={1}
-                type="number"
-                placeholder="Tempo de Trabalho:"
-                name="time-working"
-                onChange={(event) => setInputWorking(event.target.value)}
-                value={inputWorking}
-              />
-              <input
-                className="config-input"
-                min={1}
-                type="number"
-                placeholder="Tempo de Folga Menor:"
-                name="time-working-small"
-                onChange={(event) => setInputWorkingSmall(event.target.value)}
-                value={inputWorkingSmall}
-              />
-              <input
-                className="config-input"
-                min={1}
-                type="number"
-                placeholder="Tempo de Folga Maior:"
-                name="time-working-langer"
-                onChange={(event) => setInputWorkingLanger(event.target.value)}
-                value={inputWorkingLanger}
-              />
-              <input
-                className="config-input"
-                min={1}
-                type="number"
-                placeholder="Ciclos de Repetição:"
-                name="repeat-cycles"
-                onChange={(event) => setInputWorkingCycles(event.target.value)}
-                value={inputWorkingCycles}
-              />
-              <ButtonCreate
-                className="btn-start"
-                text="Criar"
-                onClick={() => {
-                  setShowtime(true);
-                }}
-              />
+                <div className="container-input">
+                  <input
+                    className="config-input"
+                    min={1}
+                    type="number"
+                    placeholder="Tempo de Trabalho:"
+                    name="time-working"
+                    onChange={(event) => setInputWorking(event.target.value)}
+                    value={inputWorking}
+                  />
+                  <input
+                    className="config-input"
+                    min={1}
+                    type="number"
+                    placeholder="Tempo de Folga Menor:"
+                    name="time-working-small"
+                    onChange={(event) =>
+                      setInputWorkingSmall(event.target.value)
+                    }
+                    value={inputWorkingSmall}
+                  />
+                  <input
+                    className="config-input"
+                    min={1}
+                    type="number"
+                    placeholder="Tempo de Folga Maior:"
+                    name="time-working-langer"
+                    onChange={(event) =>
+                      setInputWorkingLanger(event.target.value)
+                    }
+                    value={inputWorkingLanger}
+                  />
+                  <input
+                    className="config-input"
+                    min={1}
+                    type="number"
+                    placeholder="Ciclos de Repetição:"
+                    name="repeat-cycles"
+                    onChange={(event) =>
+                      setInputWorkingCycles(event.target.value)
+                    }
+                    value={inputWorkingCycles}
+                  />
+                  <ButtonCreate
+                    className="btn-start"
+                    text="Criar"
+                    onClick={() => {
+                      setShowtime(true);
+                    }}
+                  />
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
+          )}
+        </>
       )}
-    </div>
+    </>
   );
 }
 
